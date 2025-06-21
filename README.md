@@ -1,57 +1,64 @@
-# Personal Portfolio Website - Week 1
+# Personal Portfolio Website
 
-## Overview
+This is a personal portfolio website built using Django. It includes a homepage, a simple form for project details, and dynamic features with CSS and JavaScript. It demonstrates how to use Django views, templates, static files, models, and the admin panel.
 
-This repository contains the foundational setup and initial development for my Personal Portfolio Website built with Django. The goal for Week 1 is to set up the development environment, understand Django basics, and create a simple “Hello World” app including a basic form.
+# How to Run the Project
 
----
-
-## Week 1: Foundation & Setup
-
-### Tasks Completed:
-
-1. **Install Development Environment**
-   - Installed Python
-   - Installed Django (`pip install django`)
-   - Installed VS Code with Python extension
-   - Set up Git and created a GitHub repository
-   - Created a Django project using `django-admin startproject mysite`
-   - Ran the development server locally
-
-2. **Complete "Hello World" Django App**
-   - Created a basic Django app named `portfolio`
-   - Built a simple view to display a "Hello, this is my portfolio homepage!" message
-   - Connected URL patterns to the view
-   - Displayed HTML response
-
-3. **Learn Django Basics**
-   - Explored Django project and app structure
-   - Understood URL routing, views, and templates
-   - Set up static files folder for CSS and images
-
-4. **Follow Tutorials & Reading**
-   - Worked through:
-     - *Django for Beginners* (Chapters 1-3)
-     - Official Django Tutorial: https://docs.djangoproject.com/en/stable/intro/
-
-5. **Create a Simple Form**
-   - Created a basic HTML form page
-   - Handled form submission in a Django view
-   - Displayed submitted data as a response
-
----
-
-## How to Run Locally
-
-```bash
 git clone <your-repository-link>
 cd mysite
 
+# Install Django 
+
 pip install django
 
-python3 manage.py migrate
+# Apply Migrations
 
-python3 manage.py runserver
+python manage.py migrate
 
-Open your browser and go to:
-http://127.0.0.1:8000/
+# Create a Superuser (Optional, for admin access)
+
+python manage.py createsuperuser
+
+# Run the Development Server
+
+python manage.py runserver
+
+# Open in your browser
+
+Go to:
+http://127.0.0.1:8000/ — Main site
+http://127.0.0.1:8000/admin — Admin panel
+
+# Project Structure
+
+mysite/
+├── mysite/
+│   ├── settings.py
+│   └── urls.py
+├── portfolio/
+│   ├── templates/
+│   │   └── home.html
+│   ├── static/
+│   │   └── portfolio/
+│   │       ├── styles.css
+│   │       └── script.js
+│   ├── views.py
+│   ├── urls.py
+│   ├── models.py
+│   └── admin.py
+├── db.sqlite3
+└── manage.py
+
+# Notes
+
+- Static files (CSS, JavaScript) are stored in portfolio/static/portfolio/.
+- Templates are stored in portfolio/templates/.
+- To add projects via Django Admin, login to /admin and use the Project model.
+- JavaScript is used to dynamically display project cards from the form.
+
+# Technologies Used
+
+- Django
+- HTML & CSS
+- JavaScript
+- SQLite (default Django database)
