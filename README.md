@@ -29,26 +29,6 @@ Go to:
 http://127.0.0.1:8000/ — Main site
 http://127.0.0.1:8000/admin — Admin panel
 
-# Project Structure
-
-mysite/
-├── mysite/
-│   ├── settings.py
-│   └── urls.py
-├── portfolio/
-│   ├── templates/
-│   │   └── home.html
-│   ├── static/
-│   │   └── portfolio/
-│   │       ├── styles.css
-│   │       └── script.js
-│   ├── views.py
-│   ├── urls.py
-│   ├── models.py
-│   └── admin.py
-├── db.sqlite3
-└── manage.py
-
 # Notes
 
 - Static files (CSS, JavaScript) are stored in portfolio/static/portfolio/.
