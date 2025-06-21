@@ -1,17 +1,16 @@
 import os
 from pathlib import Path
 
-# Base directory of the project
+# Build paths inside the project like this: BASE_DIR / 'subdir'
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'your-secret-key'  # Replace with a real secret key in production!
+SECRET_KEY = 'your-secret-key-here'  # Replace with your real secret key in production
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# Update this to your domain or IP addresses in production
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []  # Add your domain or IP here in production
 
 # Application definition
 INSTALLED_APPS = [
@@ -21,7 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'portfolio',  # Your app
+    'portfolio',  # your app
 ]
 
 MIDDLEWARE = [
@@ -34,19 +33,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# Root URL configuration
-ROOT_URLCONF = 'mysite.urls'  # Make sure this matches your project folder name
+ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # Global templates folder (optional)
-        'DIRS': [BASE_DIR / 'templates'],  
-        'APP_DIRS': True,  # Enables searching templates inside app folders
+        'DIRS': [BASE_DIR / 'templates'],  # optional: for global templates
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',  # Required by admin
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -54,9 +51,9 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mysite.wsgi.application'  # Make sure this matches your project folder name
+WSGI_APPLICATION = 'mysite.wsgi.application'
 
-# Database configuration - using SQLite here
+# Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -64,8 +61,21 @@ DATABASES = {
     }
 }
 
-# Password validation (optional for now)
-AUTH_PASSWORD_VALIDATORS = []
+# Password validation
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'
@@ -76,13 +86,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 
-# Where Django looks for additional static files during development
+
 STATICFILES_DIRS = [
-    BASE_DIR / 'portfolio' / 'static',  # Your app's static files
+    BASE_DIR / 'portfolio' / 'static',
 ]
 
-# Where `collectstatic` will put static files for production (usually on your server)
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+# For production: Uncomment the following if collecting static files
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

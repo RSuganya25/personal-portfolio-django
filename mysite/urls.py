@@ -3,5 +3,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('portfolio.urls')),  # this is important
+    path('', include('portfolio.urls')),  # root URL goes to portfolio app
 ]
